@@ -16,6 +16,12 @@ import 'features/products/domain/repositories/product_repository.dart';
 import 'features/products/domain/usecases/get_products_usecase.dart';
 import 'features/products/presentation/bloc/product_bloc.dart';
 import 'features/cart/presentation/bloc/cart_bloc.dart';
+import 'features/orders/data/datasources/order_remote_data_source.dart';
+import 'features/orders/data/repositories/order_repository_impl.dart';
+import 'features/orders/domain/repositories/order_repository.dart';
+import 'features/orders/domain/usecases/create_invoice_usecase.dart';
+import 'features/orders/domain/usecases/get_my_invoices_usecase.dart';
+import 'features/orders/presentation/bloc/order_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -87,4 +93,23 @@ Future<void> initDependencies() async {
 
   //! Cart Feature
   sl.registerLazySingleton(() => CartBloc());
+
+    //! Orders Feature
+  sl.registerFactory(
+    () => OrderBloc(
+      createInvoiceUseCase: sl(),
+      getMyInvoicesUseCase: sl(),
+    ),
+  );
+
+  sl.registerLazySingleton(() => CreateInvoiceUseCase(sl()));
+  sl.registerLazySingleton(() => GetMyInvoicesUseCase(sl()));
+
+  sl.registerLazySingleton<OrderRepository>(
+    () => OrderRepositoryImpl(remoteDataSource: sl()),
+  );
+
+  sl.registerLazySingleton<OrderRemoteDataSource>(
+    () => OrderRemoteDataSourceImpl(client: sl()),
+  );
 }
