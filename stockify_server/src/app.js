@@ -6,6 +6,7 @@ const ApiError = require('./utils/apiError');
 const errorHandler = require('./middlewares/errorHandler');
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
+const invoiceRoutes = require('./routes/invoiceRoutes');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/products', productRoutes);
+app.use('/api/v1/invoices', invoiceRoutes);
 
 app.use((req, res, next) => {
   next(new ApiError(`Can't find ${req.originalUrl} on this server!`, 404));
