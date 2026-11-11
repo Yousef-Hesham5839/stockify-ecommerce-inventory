@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/products?page=1&limit=10&inStock=true"
+method: GET
+queryParams:
+  - key: page
+    value: "1"
+  - key: limit
+    value: "10"
+  - key: search
+    value: keyboard
+    disabled: true
+  - key: category
+    value: electronics
+    disabled: true
+  - key: inStock
+    value: "true"
+order: 1000

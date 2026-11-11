@@ -1,0 +1,24 @@
+$kind: http-request
+name: Checkout / Create Invoice
+url: "{{baseUrl}}/invoices"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "items": [
+        {
+          "productId": "PRODUCT_ID_HERE",
+          "quantity": 2
+        }
+      ],
+      "shippingAddress": "123 Cairo St, Egypt",
+      "paymentMethod": "CASH_ON_DELIVERY"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 1000

@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{baseUrl}}/invoices/INVOICE_ID_HERE/cancel"
+method: PUT
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 4000

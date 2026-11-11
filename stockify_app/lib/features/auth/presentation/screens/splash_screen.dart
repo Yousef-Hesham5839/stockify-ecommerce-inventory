@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../products/presentation/screens/products_screen.dart';
 import '../bloc/auth_bloc.dart';
 import '../bloc/auth_event.dart';
 import '../bloc/auth_state.dart';
@@ -17,7 +18,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<AuthBloc>().add(CheckAuthStatus());
+    _startInitFlow();
+  }
+
+  void _startInitFlow() async {
+    await Future.delayed(const Duration(seconds: 2));
+    if (mounted) {
+      context.read<AuthBloc>().add(CheckAuthStatus());
+    }
   }
 
   @override
@@ -27,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
         if (state is Authenticated) {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (_) => const LoginScreen()),
+            MaterialPageRoute(builder: (_) => const ProductsScreen()),
           );
         } else if (state is Unauthenticated || state is AuthFailureState) {
           Navigator.pushReplacement(

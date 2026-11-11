@@ -1,0 +1,5 @@
+$kind: collection
+description: Comprehensive RESTful API for Stockify E-Commerce & Inventory Management System.
+variables:
+  baseUrl: http://localhost:5000/api/v1
+  token: ""

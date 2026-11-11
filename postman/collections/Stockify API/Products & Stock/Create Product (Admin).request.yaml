@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{baseUrl}}/products"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "name": "Wireless Mechanical Keyboard",
+      "sku": "KB-RGB-001",
+      "description": "High-grade RGB mechanical gaming keyboard with brown switches",
+      "price": 89.99,
+      "stockQuantity": 50,
+      "category": "electronics",
+      "imageUrl": "https://placehold.co/600x400/png?text=Product+Image"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 3000

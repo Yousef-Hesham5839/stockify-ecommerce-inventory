@@ -6,6 +6,7 @@ import '../bloc/product_event.dart';
 import '../bloc/product_state.dart';
 import '../widgets/product_card.dart';
 import 'product_detail_screen.dart';
+import '../../../products/presentation/screens/products_screen.dart';
 
 class ProductsScreen extends StatefulWidget {
   const ProductsScreen({super.key});

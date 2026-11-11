@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../products/presentation/screens/products_screen.dart';
 import '../bloc/auth_bloc.dart';
 import '../bloc/auth_event.dart';
 import '../bloc/auth_state.dart';
@@ -55,6 +56,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 content: Text('Welcome back, ${state.user.name}!'),
                 backgroundColor: AppTheme.accentColor,
               ),
+            );
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => const ProductsScreen()),
             );
           }
         },
@@ -146,15 +151,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       ElevatedButton(
                         onPressed: isLoading ? null : _onLoginPressed,
                         child: isLoading
-                          ? const SizedBox(
-                              height: 20,
-                              width: 20,
-                              child: CircularProgressIndicator(
-                                strokeWidth: 2,
-                                color: Colors.white,
-                              ),
-                            )
-                          : const Text('Sign In'),
+                            ? const SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  color: Colors.white,
+                                ),
+                              )
+                            : const Text('Sign In'),
                       ),
                       const SizedBox(height: 20),
                       Row(

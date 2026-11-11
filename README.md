@@ -135,3 +135,52 @@ flutter run
 
 ## 👨‍💻 Author
 - **Yousef Hesham** - *Full Stack Mobile Engineer*
+
+## 📱 App Screenshots
+
+<p align="center">
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <b>1. Splash Screen</b><br/>
+        <img src="screenshots/1.png" width="220" alt="Splash Screen" />
+      </td>
+      <td align="center" width="33%">
+        <b>2. Sign In</b><br/>
+        <img src="screenshots/2.png" width="220" alt="Sign In" />
+      </td>
+      <td align="center" width="33%">
+        <b>3. Sign Up</b><br/>
+        <img src="screenshots/3.png" width="220" alt="Sign Up" />
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="33%">
+        <b>4. Products Catalog</b><br/>
+        <img src="screenshots/4.png" width="220" alt="Catalog" />
+      </td>
+      <td align="center" width="33%">
+        <b>5. Search & Filter</b><br/>
+        <img src="screenshots/5.png" width="220" alt="Product Details" />
+      </td>
+      <td align="center" width="33%">
+        <b>6. Product Details & Stock</b><br/>
+        <img src="screenshots/6_details.png" width="220" alt="Add to Chart" />
+      </td>
+    </tr>
+    <tr>
+      <td align="center" width="33%">
+        <b>7. Smart Cart</b><br/>
+        <img src="screenshots/7.png" width="220" alt="Cart" />
+      </td>
+      <td align="center" width="33%">
+        <b>8. Checkout & Invoice</b><br/>
+        <img src="screenshots/8.png" width="220" alt="Checkout" />
+      </td>
+      <td align="center" width="33%">
+        <b>9. Order Confirmed</b><br/>
+        <img src="screenshots/9.png" width="220" alt="Success" />
+      </td>
+    </tr>
+  </table>
+</p>
