@@ -15,6 +15,7 @@ import 'features/products/data/repositories/product_repository_impl.dart';
 import 'features/products/domain/repositories/product_repository.dart';
 import 'features/products/domain/usecases/get_products_usecase.dart';
 import 'features/products/presentation/bloc/product_bloc.dart';
+import 'features/cart/presentation/bloc/cart_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -83,4 +84,7 @@ Future<void> initDependencies() async {
   sl.registerLazySingleton<ProductRemoteDataSource>(
     () => ProductRemoteDataSourceImpl(client: sl()),
   );
+
+  //! Cart Feature
+  sl.registerLazySingleton(() => CartBloc());
 }

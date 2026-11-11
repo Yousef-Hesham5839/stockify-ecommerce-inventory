@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stockify_app/features/cart/presentation/bloc/cart_bloc.dart';
 import 'package:stockify_app/features/products/presentation/bloc/product_bloc.dart';
 import 'core/theme/app_theme.dart';
 import 'features/auth/presentation/bloc/auth_bloc.dart';
@@ -25,6 +26,9 @@ class StockifyApp extends StatelessWidget {
         ),
         BlocProvider<ProductBloc>(
           create: (_) => di.sl<ProductBloc>(),
+        ),
+        BlocProvider<CartBloc>(
+          create: (_) => di.sl<CartBloc>(),
         ),
       ],
       child: MaterialApp(

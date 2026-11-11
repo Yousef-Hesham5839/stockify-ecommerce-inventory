@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/theme/app_theme.dart';
+import 'package:stockify_app/features/cart/presentation/screens/cart_screen.dart';
 import '../bloc/product_bloc.dart';
 import '../bloc/product_event.dart';
 import '../bloc/product_state.dart';
@@ -38,6 +38,10 @@ class _ProductsScreenState extends State<ProductsScreen> {
           IconButton(
             icon: const Icon(Icons.shopping_cart_outlined),
             onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const CartScreen()),
+              );
             },
           ),
         ],

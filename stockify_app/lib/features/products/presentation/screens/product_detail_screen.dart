@@ -1,5 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stockify_app/features/cart/presentation/bloc/cart_bloc.dart';
+import 'package:stockify_app/features/cart/presentation/bloc/cart_event.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../domain/entities/product_entity.dart';
 
@@ -87,11 +90,17 @@ class ProductDetailScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ElevatedButton.icon(
-            onPressed: product.isOutOfStock ? null : () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('${product.name} added to cart!')),
-              );
-            },
+            onPressed: product.isOutOfStock
+                ? null
+                : () {
+                    context.read<CartBloc>().add(AddToCartEvent(product: product));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('${product.name} added to cart!'),
+                        backgroundColor: AppTheme.accentColor,
+                      ),
+                    );
+                  },
             icon: const Icon(Icons.add_shopping_cart),
             label: Text(product.isOutOfStock ? 'Sold Out' : 'Add to Cart'),
           ),
