@@ -1,0 +1,14 @@
+class ServerException implements Exception {
+  final String message;
+  final int? statusCode;
+
+  ServerException({required this.message, this.statusCode});
+
+  @override
+  String toString() => message;
+}
+
+class CacheException implements Exception {
+  final String message;
+  CacheException({this.message = 'Cache error'});
+}
