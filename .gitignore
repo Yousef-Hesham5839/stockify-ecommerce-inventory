@@ -1,0 +1,27 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node.js Server
+stockify_server/node_modules/
+stockify_server/.env
+stockify_server/npm-debug.log*
+
+# Flutter App
+stockify_app/.dart_tool/
+stockify_app/.flutter-plugins
+stockify_app/.flutter-plugins-dependencies
+stockify_app/build/
+stockify_app/.packages
+stockify_app/.pub/
+stockify_app/.pub-cache/
+stockify_app/android/.gradle/
+stockify_app/android/local.properties
+stockify_app/ios/Pods/
+stockify_app/ios/.symlinks/
