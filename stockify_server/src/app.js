@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const ApiError = require('./utils/apiError');
 const errorHandler = require('./middlewares/errorHandler');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -16,11 +17,11 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-
 app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok', message: 'Stockify API is running smoothly' });
 });
 
+app.use('/api/v1/auth', authRoutes);
 
 app.use((req, res, next) => {
   next(new ApiError(`Can't find ${req.originalUrl} on this server!`, 404));
