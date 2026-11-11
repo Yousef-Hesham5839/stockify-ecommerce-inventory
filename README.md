@@ -165,7 +165,7 @@ flutter run
       </td>
       <td align="center" width="33%">
         <b>6. Product Details & Stock</b><br/>
-        <img src="screenshots/6_details.png" width="220" alt="Add to Chart" />
+        <img src="screenshots/6.png" width="220" alt="Add to Chart" />
       </td>
     </tr>
     <tr>
